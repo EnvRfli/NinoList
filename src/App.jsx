@@ -4,7 +4,7 @@ import Home from "./pages/home";
 import Footer from "./components/footer";
 import AnimeDetails from "./pages/anime_details";
 import Overview from "./pages/details_list/overview";
-import Characters from "./pages/details_list/Characters";
+import Characters from "./pages/details_list/characters";
 import Episodes from "./pages/details_list/episodes";
 import Related from "./pages/details_list/related";
 import Reviews from "./pages/details_list/reviews";
