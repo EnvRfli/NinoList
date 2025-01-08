@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset default margin/padding */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+/* Pastikan elemen root memiliki dimensi penuh */
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.card_img {
+  aspect-ratio: 9 / 13; /* Rasio aspek 16:9 */
+  position: relative; /* Agar absolute anaknya tetap dalam container */
+  overflow: hidden; /* Potong bagian gambar yang keluar */
+  width: 100%;
+}
+
+.line-clamp-10 {
+  display: -webkit-box;
+  -webkit-line-clamp: 10; /* Membatasi hingga 10 baris */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.transition-max-height {
+  transition: max-height 0.5s ease-in-out;
+}
