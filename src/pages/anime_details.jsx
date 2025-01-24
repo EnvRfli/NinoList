@@ -240,12 +240,20 @@ function AnimeDetails() {
                     <div className="p-2">
                         <h2 className="text-2xs font-bold">Synopsis</h2>
                         <p className="text-xs mt-1">
-                            {anime.synopsis.split("\n").map((line, index) => (
-                                <React.Fragment key={index}>
-                                    {line}
-                                    <br />
-                                </React.Fragment>
-                            ))}
+                            {anime.synopsis ? (
+
+                                anime.synopsis.split("\n").map((line, index) => (
+                                    <React.Fragment key={index}>
+                                        {anime.synopsis ?? 'No synopsis for this anime'}
+                                        <br />
+                                    </React.Fragment>
+                                ))
+                            ) : (
+                                <p>
+                                    no Synopsis for this anime
+                                </p>
+                            )
+                            }
                         </p>
                     </div>
                     {/* Tabs */}

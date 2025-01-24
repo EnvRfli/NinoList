@@ -17,7 +17,7 @@ function Home() {
 
 
   const handleSearch = async (query) => {
-    if (!query.trim()) return; // Skip if query is empty or contains only whitespace
+    if (!query.trim()) return;
 
     setSearchLoading(true);
     const controller = new AbortController();
@@ -26,7 +26,7 @@ function Home() {
     try {
       const data = await getAnimeSearch(query, signal);
       if (data) {
-        setResults(data.data); // Ensure to set the correct data structure
+        setResults(data.data);
       }
     } catch (error) {
       console.error("Error fetching search results:", error);
@@ -106,10 +106,10 @@ function Home() {
 
           <div className="h-6 bg-blue-200 rounded-md w-1/3 mt-8 mb-4"></div>
           <div className="grid grid-cols-3 lg:grid-cols-5 gap-4">
-            {[...Array(10)].map((_, index) => (
+            {[...Array(20)].map((_, index) => (
               <div
                 key={index}
-                className="bg-gray-300 rounded-md h-40 w-full animate-pulse"
+                className="bg-gray-300 rounded-md h-72 w-full animate-pulse"
               ></div>
             ))}
           </div>
@@ -208,7 +208,6 @@ function Home() {
         Anime This Season
       </h2>
       <div className="grid grid-cols-3 lg:grid-cols-5 gap-4">
-        {/* Baris 1 */}
         {animeThisSeason.slice(0, 3).map((anime) => (
           <a
             key={anime.mal_id}
@@ -250,7 +249,7 @@ function Home() {
           </a>
         ))}
 
-        <div className="col-span-1 lg:col-span-2 bg-gray-100 row-span-2">
+        <div className="col-span-3 lg:col-span-2 bg-gray-100 row-span-2">
           <div className="text-gray-700 p-4 flex flex-col">
             <h2 className="text-xl font-bold text-center flex-none mb-4">
               Top 10 Rated Anime
